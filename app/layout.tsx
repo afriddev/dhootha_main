@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
+import Head from 'next/head'
 
 export const metadata: Metadata = {
   title:'Fininfolib',
@@ -16,6 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <title>My page title</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      </Head>
        <head>
        <link rel="shortcut icon" href="https://www.fininfocom.com/assets/img/favicon/apple-touch-icon.png" />
        <link

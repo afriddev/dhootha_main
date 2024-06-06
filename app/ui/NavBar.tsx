@@ -8,58 +8,39 @@ import {
   PORTFOLIO,
 } from "../utils/appConstants";
 import { Button } from "../../@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import Link from "next/link";
 
 function NavBar() {
-  const navigate = useNavigate();
   return (
     <div className="relative flex h-24  w-full items-center bg-secondary  ">
       <HiOutlineMenuAlt4 className="absolute right-6 float-right block h-7 w-7 cursor-pointer lg:hidden" />
-      <div
-        onClick={() => {
-          navigate("/");
-        }}
+      <Link
+        href={"/"}
         className="absolute left-4 w-20 text-wrap lg:left-8  lg:w-fit "
       >
         <label className=" flex items-center gap-x-1 text-xl font-medium lg:cursor-pointer lg:text-3xl lg:hover:scale-105">
           {DOOTHA_PROMOTIONS}
         </label>
-      </div>
+      </Link>
       <div className="absolute right-10 hidden lg:block">
         <li className="flex list-none items-center gap-x-10">
-          <Button
-            onClick={() => {
-              navigate("/portfolio");
-            }}
-            variant={"outline"}
-          >
-            {PORTFOLIO}
-          </Button>
+          <Link href={"/portfolio"}>
+            <Button variant={"outline"}>{PORTFOLIO}</Button>
+          </Link>
           <Button variant={"outline"}>{BLOG}</Button>
+          <Link href={"/about"}>
+            <Button variant={"outline"}>{ABOUT_US}</Button>
+          </Link>
+          <Link href={"/contact-us"}>
+            <Button variant={"outline"}>{CONTACT}</Button>
+          </Link>
+          <Link href={"/hone"}>
           <Button
-            variant={"outline"}
-            onClick={() => {
-              navigate("/about-us");
-            }}
-          >
-            {ABOUT_US}
-          </Button>
-          <Button
-            variant={"outline"}
-            onClick={() => {
-              navigate("/contact-us");
-            }}
-          >
-            {CONTACT}
-          </Button>
-          <Button
-            onClick={() => {
-              navigate("/home");
-            }}
+           
             className="hidden lg:block"
           >
             {HOME}
-          </Button>
+          </Button></Link>
         </li>
       </div>
     </div>

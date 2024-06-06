@@ -9,10 +9,10 @@ import { FaInstagram } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import Link from "next/link";
+
 
 function Footer() {
-  const navigate = useNavigate()
   return (
     <div className="bg-black p-5 text-white">
       <div className="flex flex-col gap-3 lg:items-center">
@@ -47,9 +47,7 @@ function Footer() {
 
       <div className="mt-2 flex w-full items-center justify-between lg:px-20 lg:mt-10">
         <label className="text-[10px] lg:text-lg font-normal">{`${COPYRIGHT_SYMBOL}  ${DOOTHA_PROMOTIONS}`}</label>
-        <a onClick={()=>{
-          navigate("/privacy-policy")
-        }} className="text-[10px] lg:text-lg font-normal cursor-pointer  border-b border-white lg:hover:scale-105 ">{PRIVACY_POLICY}</a>
+        <Link href={"/privacy-policy"} className="text-[10px] lg:text-lg font-normal cursor-pointer  border-b border-white lg:hover:scale-105 ">{PRIVACY_POLICY}</Link>
 
         <a className="text-[10px] lg:text-lg font-normal cursor-pointer  border-b border-white lg:hover:scale-105 ">{TERMS_OF_SERVICES}</a>
       </div>

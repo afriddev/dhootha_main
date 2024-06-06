@@ -50,9 +50,9 @@ import Spinner from "../ui/Spinner";
 import { useEffect, useState } from "react";
 import { useAppContext } from "../utils/AppContext";
 import { useNavigate } from "react-router-dom";
+import Link from "next/link";
 
 function HomeMain() {
-  const navigate = useNavigate();
   const { dispatch, visitedPages } = useAppContext();
   const [loading, setLoading] = useState(
     visitedPages?.includes("HOME") ? false : true,
@@ -97,15 +97,12 @@ function HomeMain() {
                 </p>
                 <p className="font-normal">{HOME_MAIN_CONTENT_2}</p>
               </div>
-              <div
-                onClick={() => {
-                  navigate("/contact-us");
-                }}
+              <Link href={"/contact-us"}
                 className="mx-4 mt-4 flex h-fit cursor-pointer items-center gap-x-6 rounded-xl border-2 bg-secondary px-5 py-4 text-secondary-foreground hover:scale-105"
               >
                 <FaWhatsapp className="h-10 w-10 " />
                 <a className="text-pretty">{HAVE_A_CHAT}</a>
-              </div>
+              </Link>
             </div>
           </div>
           <div className="w-screen bg-primary  p-6 text-primary-foreground lg:p-20">
