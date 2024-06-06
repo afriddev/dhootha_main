@@ -1,9 +1,12 @@
+'use client'
 import * as React from "react";
 import { cn } from "../../lib/utils";
 import { BsPerson } from "react-icons/bs";
 import { BsPersonVcard } from "react-icons/bs";
 import { MdOutlineMail } from "react-icons/md";
 import { FiPhone, FiMessageSquare } from "react-icons/fi";
+import { useEffect, useState } from "react";
+
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
@@ -24,24 +27,19 @@ const IconInput = React.forwardRef<HTMLInputElement, InputProps>(
           return <FiMessageSquare className="h-5 w-5 " />;
       }
     }
-
+    const [click,setClick] = useState(false)
     return (
       <div onBlur={()=>{
-        const acceptClassName =  document.getElementById("accept"+accept);
-       (acceptClassName as any).className =  "absolute left-10 text-xs top-[0.7rem] text-secondary-foreground/80 ease-in-out animate-out"
-
+        setClick(false)
       }}
       onClick={()=>{
-       const acceptClassName =  document.getElementById("accept"+accept);
-       (acceptClassName as any).className =  "absolute left-10 text-xs -top-[0.8rem]  bg-background text-secondary-foreground/80 animate-in px-1"
-       document.getElementById(accept!)?.focus()
+        setClick(true)
       }} className="relative flex items-center ">
-        <label className="absolute left-10 text-xs top-[0.7rem] text-secondary-foreground/80 ease-in-out bg-transparent  " id={"accept"+accept}>{accept}</label>
         <a className="absolute left-2 z-[900]  ">
-          {" "}
-          {getIcon(alt!)}
+        {getIcon(alt!)}
         </a>
         <input 
+        placeholder={accept}
         id={accept}
           type={type}
           className={cn(
@@ -54,7 +52,7 @@ const IconInput = React.forwardRef<HTMLInputElement, InputProps>(
       </div>
     );
   },
-);
+); 
 IconInput.displayName = "Input";
 
 export { IconInput };

@@ -1,3 +1,4 @@
+'use client'
 import Slider from "react-slick";
 import { CarouselViewInterfaceInterface } from "../types/homePageDataTypes";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
@@ -37,7 +38,7 @@ function CarouselView({
   return (
     <Slider
       {...settings}
-      className={`relative flex w-full max-w-[92vw] items-center justify-center rounded-lg ${clientTestimonials?"lg:max-w-[100vw]   lg:h-[70vh]":"lg:max-w-[50vw]  "}`}
+      className={`relative flex w-full max-w-[92vw] items-center justify-center rounded-lg ${clientTestimonials?"lg:max-w-[100vw]   lg:h-[55vh]":"lg:max-w-[50vw]  "}`}
     >
       {dataArray &&
         dataArray.length > 0 &&
@@ -89,7 +90,7 @@ function NextArrow(props: any) {
     <div className="cursor-pointer">
       <FaChevronRight
         onClick={onClick}
-        className={`absolute  right-[0.1rem] z-[900] h-10 w-7 rounded-md border bg-primary-foreground p-2 text-black ${disabled ? "text-primabg-primary-foreground/20 bg-primary-foreground/10" : "bg-primary-foreground text-black"}  shadow-xl `}
+        className={`absolute top-[27.5vh] right-[0.1rem] z-[900] h-10 w-7 rounded-md border bg-primary-foreground p-2 text-black ${disabled ? "text-primabg-primary-foreground/20 bg-primary-foreground/10" : "bg-primary-foreground text-black"}  shadow-xl `}
       />
     </div>
   );
@@ -100,7 +101,7 @@ function PrevArrow(props: any) {
     <div className="cursor-pointer">
       <FaChevronLeft
         onClick={onClick}
-        className={`absolute z-[900] h-10 w-7 rounded-md border bg-primary-foreground p-2 text-black ${disabled ? "text-primabg-primary-foreground/20 bg-primary-foreground/10" : "bg-primary-foreground text-black"} shadow-xl`}
+        className={`absolute top-[27.5vh] z-[900] h-10 w-7 rounded-md border bg-primary-foreground p-2 text-black ${disabled ? "text-primabg-primary-foreground/20 bg-primary-foreground/10" : "bg-primary-foreground text-black"} shadow-xl`}
       />
     </div>
   );
