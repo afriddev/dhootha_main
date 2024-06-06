@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from "react";
 import BottomNav from "../ui/BottomNav";
 import Footer from "../ui/Footer";

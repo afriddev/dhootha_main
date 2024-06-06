@@ -1,3 +1,4 @@
+"use client"
 import {
   HOME_MAIN_CONTENT_END,
   HOME_MAIN_CONTENT_START,

@@ -1,3 +1,4 @@
+"use client"
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import HomeMain from "./pages/HomeMain";

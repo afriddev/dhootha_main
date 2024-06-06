@@ -1,3 +1,4 @@
+"use client"
 import Footer from "../ui/Footer";
 import NavBar from "../ui/NavBar";
 import { PRIVACY_POLICY, PRIVACY_POLICY_1, PRIVACY_POLICY_2, PRIVACY_POLICY_3 } from "../utils/appConstants";

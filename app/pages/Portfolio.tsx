@@ -1,3 +1,4 @@
+"use client"
 import {
   OUR_PORTFOLIO,
   OUR_PORTFOLIO_DESC,

@@ -1,3 +1,4 @@
+"use client"
 import {
     OUR_SERICES,
     OUR_SERVICES_DESC,
