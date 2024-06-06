@@ -1,3 +1,4 @@
+'use client'
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import {
   ABOUT_US,
@@ -9,11 +10,18 @@ import {
 } from "../utils/appConstants";
 import { Button } from "../../@/components/ui/button";
 import Link from "next/link";
+import { useState } from "react";
 
 function NavBar() {
+  const [open,setOpen] = useState(false)
+  
+  function handleMenu(){
+    setOpen(true)
+
+  }
   return (
-    <div className="relative flex h-24  w-full items-center bg-secondary  ">
-      <HiOutlineMenuAlt4 className="absolute right-6 float-right block h-7 w-7 cursor-pointer lg:hidden" />
+    <div className="relative flex lg:h-24  w-full items-center bg-red-400  ">
+      <HiOutlineMenuAlt4 onClick={handleMenu} className="absolute right-6 float-right block h-7 w-7  cursor-pointer lg:hidden" />
       <Link
         href={"/"}
         className="absolute left-4 w-20 text-wrap lg:left-8  lg:w-fit "
@@ -27,7 +35,6 @@ function NavBar() {
           <Link href={"/portfolio"}>
             <Button variant={"outline"}>{PORTFOLIO}</Button>
           </Link>
-          <Button variant={"outline"}>{BLOG}</Button>
           <Link href={"/about"}>
             <Button variant={"outline"}>{ABOUT_US}</Button>
           </Link>
