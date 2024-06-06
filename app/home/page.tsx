@@ -101,7 +101,7 @@ function HomeMain() {
                 className="mx-4 mt-4 flex h-fit cursor-pointer items-center gap-x-6 rounded-xl border-2 bg-secondary px-5 py-4 text-secondary-foreground hover:scale-105"
               >
                 <FaWhatsapp className="h-10 w-10 " />
-                <a className="text-pretty">{HAVE_A_CHAT}</a>
+                <p className="text-pretty">{HAVE_A_CHAT}</p>
               </Link>
             </div>
           </div>
