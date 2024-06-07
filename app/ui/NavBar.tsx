@@ -15,7 +15,7 @@ import Hamburger from "hamburger-react";
 import MobileNavBar from "./MobileNavbar";
 
 function NavBar() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <>
       <div className=" flex h-fit  items-center bg-secondary  ">
