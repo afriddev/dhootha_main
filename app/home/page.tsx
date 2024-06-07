@@ -72,7 +72,7 @@ function HomeMain() {
 
   return (
     <main className="w-scrren  relative h-screen overflow-x-hidden">
-      {loading && <Spinner />}
+      {/* {loading && <Spinner />} */}
       <div className=" flex flex-col ">
         <NavBar />
         <div className="flex flex-col gap-y-6 pt-4 font-semibold">
