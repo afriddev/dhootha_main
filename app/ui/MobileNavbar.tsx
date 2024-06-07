@@ -22,8 +22,8 @@ interface MobileNavBarInterface{
 }
 function MobileNavBar({setOpen}:MobileNavBarInterface) {
   return (
-    <div className="flex fixed  w-screen h-screen z-[999]">
-      <div className="fixed flex flex-col w-[70vw] h-screen left-0 bg-slate-900 z-[999] items-center text-primary-foreground shadow-2xl drop-shadow-2xl py-8 px-8 justify-between">
+    <div className="flex fixed  w-screen h-[100vh] z-[999]">
+      <div className="fixed flex flex-col w-[70vw] h-[100vh] left-0 bg-slate-900 z-[999] items-center text-primary-foreground shadow-2xl drop-shadow-2xl py-8 px-8 justify-between">
       <div>
         <label className="flex text-center text-[5vh] px-3">{DOOTHA_PROMOTIONS}</label>
       </div>
@@ -95,7 +95,7 @@ function MobileNavBar({setOpen}:MobileNavBarInterface) {
       </div>
       <label className="text-[15px] mt-6 lg:text-lg font-normal">{`${COPYRIGHT_SYMBOL}  ${DOOTHA_PROMOTIONS}`}</label>
     </div>
-    <div className="h-screen w-[30vw] opacity-0 bg-transparent fixed right-0 " onClick={()=>{
+    <div className="h-[100vh] w-[30vw] opacity-0 bg-transparent fixed right-0 " onClick={()=>{
       setOpen(false)}} ></div>
     </div>
   );
