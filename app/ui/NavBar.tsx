@@ -26,9 +26,9 @@ function NavBar() {
         href={"/"}
         className="absolute left-4 w-20 text-wrap lg:left-8  lg:w-fit "
       >
-        <p className=" flex items-center gap-x-1 text-xl font-medium lg:cursor-pointer lg:text-3xl lg:hover:scale-105">
+        <label className=" flex items-center gap-x-1 text-xl font-medium lg:cursor-pointer lg:text-3xl lg:hover:scale-105">
           {DOOTHA_PROMOTIONS}
-        </p>
+        </label>
       </Link>
       <div className="absolute right-10 hidden lg:block">
         <li className="flex list-none items-center gap-x-10">
