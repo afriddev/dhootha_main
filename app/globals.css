@@ -76,6 +76,6 @@
     @apply border-border;
   }
   body {
-    @apply rounded-md bg-background font-mono text-lg text-foreground;
+    @apply rounded-md bg-background text-lg text-foreground;
   }
 }
