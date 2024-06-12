@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <head>
-       <link rel="shortcut icon" href="https://www.fininfocom.com/assets/img/favicon/apple-touch-icon.png" />
+       <link rel="shortcut icon" href="logo.png" className='h-4 w-4' />
        <link
       rel="stylesheet"
       type="text/css"

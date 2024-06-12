@@ -29,7 +29,7 @@ function BottomNav() {
       <div className="flex h-fit w-full flex-col gap-2 bg-primary p-3 text-center text-primary-foreground lg:items-center lg:justify-center">
         <h2 className="text-3xl font-bold">{READY_FOR_NEXT_PROJECT}</h2>
         <p className="text-sm  font-normal">{GET_IN_TOUCH}</p>
-        <img src="homeMain1.jpg" className="mt-6 w-[40vw] h-[40vh]  rounded-lg hidden lg:block " />
+        <img src="contactImage.jpg" className="mt-6 w-[40vw] h-[40vh]  rounded-lg hidden lg:block " />
       </div>
       <form
         onSubmit={handleSubmit(notify)}
