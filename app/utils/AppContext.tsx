@@ -29,6 +29,7 @@ function reducer(state: stateType, action: dispatchDataType) {
       };
     case "setCurrentPage":
       return {
+        ...state,
         currentPage: action.payload,
       };
     default:
@@ -41,7 +42,7 @@ export type childrenDataType = {
 };
 
 function AppContext({ children }: childrenDataType) {
-  const [{ visitedPages, currentPage }, dispatch] = useReducer(
+  const [{currentPage,visitedPages}, dispatch] = useReducer(
     reducer,
     initialState
   );
