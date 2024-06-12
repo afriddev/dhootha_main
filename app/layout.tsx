@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <head>
-       <link rel="shortcut icon" href="logo.png" className='h-4 w-4' />
+       <link rel="shortcut icon" href="favIcon.jpg" className='h-4 w-4 rounded-full'  />
        <link
       rel="stylesheet"
       type="text/css"
