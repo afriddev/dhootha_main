@@ -33,7 +33,7 @@ Welcome to **DoothaPromotions**! Our mission is to help businesses and individua
 ## Contact Us
 - **Website**: [www.doothapromotions.com](https://www.doothapromotions.com/)
 - **Email**: doothapromotions@gmail.com
-- **Phone**: +91 9390558027
+- **Phone**: +91 9553360657
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
