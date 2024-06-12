@@ -97,7 +97,7 @@ function MobileNavBar({ setOpen }: MobileNavBarInterface) {
               className={`border rounded-md border-zinc-200 w-full flex items-center justify-center py-1  ${getButtonBgColor("contact-us")}`}
               href={"/contact-us"}
               onClick={() => {
-                handleClick("conatct-us");
+                handleClick("contact-us");
               }}
             >
               {CONTACT}
