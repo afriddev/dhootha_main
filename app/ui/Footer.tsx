@@ -13,6 +13,12 @@ import Link from "next/link";
 
 
 function Footer() {
+  function openLinks(v:string){
+
+    const link = v === "w"?'//api.whatsapp.com/send?phone=919553360657&text=Hello👋':v === "i"?"https://www.instagram.com/dootha_promotions":v === "m"?"mailto:doothapromotions@gmail.com":v=="f"?"":""
+
+    window.open(link)
+  }
   return (
     <div className="bg-black p-5 text-white">
       <div className="flex flex-col gap-3 lg:items-center">
@@ -27,17 +33,17 @@ function Footer() {
         <div className="mt-2 h-[1px] w-full bg-white/60 lg:hidden"></div>
         <div className="mt-4 w-full list-none px-5 lg:w-[20vw]">
           <li className="flex w-full justify-between gap-x-6 text-white">
-            <a className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150">
+            <a onClick={()=>{openLinks("i")}} className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150">
               <FaInstagram className="h-7 w-7 text-white " />
             </a>
 
-            <a className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150">
+            <a onClick={()=>{openLinks("m")}} className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150">
               <BiLogoGmail className="h-7 w-7 text-white " />
             </a>
-            <a className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150">
+            <a onClick={()=>{openLinks("f")}} className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150">
               <FaFacebook className="h-7 w-7 text-white " />
             </a>
-            <a className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150">
+            <a onClick={()=>{openLinks("t")}} className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150">
               <FaTwitter className="h-7 w-7 text-white " />
             </a>
           </li>

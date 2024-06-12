@@ -69,7 +69,7 @@ function HomeMain() {
         });
       }, 3000);
   }, []);
-
+  
   return (
     <main className="w-scrren  relative h-screen overflow-x-hidden">
       {/* {loading && <Spinner />} */}

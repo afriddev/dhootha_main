@@ -25,7 +25,7 @@ function NavBar() {
               {DOOTHA_PROMOTIONS}
             </label>
           </Link>
-          <Hamburger toggled={open} size={30} toggle={setOpen} />
+          <a className="block lg:hidden"><Hamburger toggled={open} size={30} toggle={setOpen} /></a>
         </div>
 
         <div className=" hidden lg:block lg:pr-6">

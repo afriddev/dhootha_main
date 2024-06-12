@@ -11,6 +11,12 @@ import { TbSend2 } from "react-icons/tb";
 
 function WhatsappChat() {
   const [click, setClick] = useState(true);
+  function openLinks(v:string){
+
+    const link = v === "w"?'//api.whatsapp.com/send?phone=919553360657&text=Hello👋':v === "i"?"https://www.instagram.com/dootha_promotions":v === "m"?"mailto:doothapromotions@gmail.com":v=="f"?"":""
+
+    window.open(link)
+  }
   return (
     <div className="lg:right- fixed bottom-2 right-2 z-[997]  lg:bottom-3">
       {click ? (
@@ -32,7 +38,7 @@ function WhatsappChat() {
             <label className="text-xs ">{SUPPORT_MESSAGE}</label>
           </div>
           <div className="w-full flex justify-end pr-4 mt-8">
-            <div className=" px-2 lg:w-24 h-10 rounded-lg bg-constructive text-white flex items-center cursor-pointer justify-center gap-2 lg:hover:scale-105">{CHAT}
+            <div onClick={()=>{openLinks('w')}} className=" px-2 lg:w-24 h-10 rounded-lg bg-constructive text-white flex items-center cursor-pointer justify-center gap-2 lg:hover:scale-105">{CHAT}
             <TbSend2 className="h-5 w-5   text-white"/></div>
           </div>
         </div>
