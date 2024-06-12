@@ -18,31 +18,10 @@ import Contact from "../ui/Contact";
 import Footer from "../ui/Footer";
 import NavBar from "../ui/NavBar";
 import WhatsappChat from "../ui/WhatsappChat";
-import { useEffect, useState } from "react";
-import Spinner from "../ui/Spinner";
-import { useAppContext } from "../utils/AppContext";
 
 function Portfolio() {
-  const { dispatch, visitedPages } = useAppContext();
-  const [loading, setLoading] = useState(
-    visitedPages?.includes("PORTFOLIO") ? false : true,
-  );
-
-  useEffect(() => {
-    if (visitedPages.includes("PORTFOLIO")) null;
-    else
-      setTimeout(() => {
-        setLoading(false);
-        dispatch({
-          type: "updateVisitedPages",
-          payload: "PORTFOLIO",
-        });
-      }, 2000);
-  }, []);
-
   return (
     <main className="w-scrren  relative h-screen overflow-x-hidden">
-      {loading && <Spinner />}
       <div className=" flex flex-col ">
         <NavBar />
         <div className="flex flex-col gap-y-6 pt-4 font-semibold">

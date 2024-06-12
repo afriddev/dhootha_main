@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { ReactNode, createContext, useContext, useReducer } from "react";
 
 export type dispatchDataType = {
@@ -9,11 +9,13 @@ export type dispatchDataType = {
 type stateType = {
   dispatch: React.Dispatch<dispatchDataType>;
   visitedPages: string[];
+  currentPage: string;
 };
 
 const initialState: stateType = {
   dispatch: () => null,
   visitedPages: [],
+  currentPage: "home",
 };
 
 export const AppContextProvider = createContext(initialState);
@@ -25,6 +27,10 @@ function reducer(state: stateType, action: dispatchDataType) {
         ...state,
         visitedPages: [...state.visitedPages, action.payload],
       };
+    case "setCurrentPage":
+      return {
+        currentPage: action.payload,
+      };
     default:
       throw new Error("Action unkonwn");
   }
@@ -35,11 +41,15 @@ export type childrenDataType = {
 };
 
 function AppContext({ children }: childrenDataType) {
-  const [{ visitedPages }, dispatch] = useReducer(reducer, initialState);
+  const [{ visitedPages, currentPage }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
   return (
     <AppContextProvider.Provider
       value={{
         visitedPages,
+        currentPage,
         dispatch,
       }}
     >

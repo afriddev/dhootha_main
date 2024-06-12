@@ -46,33 +46,12 @@ import Contact from "../ui/Contact";
 import Footer from "../ui/Footer";
 import NavBar from "../ui/NavBar";
 import WhatsappChat from "../ui/WhatsappChat";
-import Spinner from "../ui/Spinner";
-import { useEffect, useState } from "react";
-import { useAppContext } from "../utils/AppContext";
-import { useNavigate } from "react-router-dom";
 import Link from "next/link";
 
 function HomeMain() {
-  const { dispatch, visitedPages } = useAppContext();
-  const [loading, setLoading] = useState(
-    visitedPages?.includes("HOME") ? false : true,
-  );
-
-  useEffect(() => {
-    if (visitedPages.includes("HOME")) null;
-    else
-      setTimeout(() => {
-        setLoading(false);
-        dispatch({
-          type: "updateVisitedPages",
-          payload: "HOME",
-        });
-      }, 3000);
-  }, []);
   
   return (
     <main className="w-scrren  relative h-screen overflow-x-hidden">
-      {/* {loading && <Spinner />} */}
       <div className=" flex flex-col ">
         <NavBar />
         <div className="flex flex-col gap-y-6 pt-4 font-semibold">

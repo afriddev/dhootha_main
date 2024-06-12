@@ -11,11 +11,31 @@ import {
   PORTFOLIO,
   PRIVACY_POLICY,
 } from "../utils/appConstants";
+import { useAppContext } from "../utils/AppContext";
 
 interface MobileNavBarInterface {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 function MobileNavBar({ setOpen }: MobileNavBarInterface) {
+  const { visitedPages, dispatch, currentPage } = useAppContext();
+
+  function updateCurrentPage(page: string) {
+    dispatch({
+      type: "setCurrentPage",
+      payload: page,
+    });
+  }
+
+  function handleClick(page?: string | boolean, link?: string) {
+    setOpen(false);
+    if (page) {
+      updateCurrentPage(page as string);
+    }
+    if (link) {
+      openLinks(link);
+    }
+  }
+
   function openLinks(v: string) {
     const link =
       v === "w"
@@ -30,6 +50,11 @@ function MobileNavBar({ setOpen }: MobileNavBarInterface) {
 
     window.open(link);
   }
+
+  function getButtonBgColor(page: string) {
+    if (page === currentPage) return " bg-secondary text-black ";
+  }
+
   return (
     <div className="flex fixed  w-screen h-[100vh] z-[999]">
       <div className="fixed flex flex-col w-[70vw] h-[100vh] left-0 bg-slate-900 z-[999] items-center text-primary-foreground shadow-2xl drop-shadow-2xl  justify-between">
@@ -37,51 +62,51 @@ function MobileNavBar({ setOpen }: MobileNavBarInterface) {
           <div className="bg-secondary w-full h-fit items-center flex justify-center">
             <img
               src="logoMain.png"
-              className=" w-[60vw] h-[6vh] lg:w-[20vw] lg:h-[9vh] my-3 items-center flex justify-center"
+              className=" w-[50vw] h-[5.7vh] lg:w-[20vw] lg:h-[9vh] my-3 items-center flex justify-center"
             />
           </div>
           <li className="flex flex-col w-full py-8 gap-10 items-center h-fit justify-between px-6">
             <Link
-              className="border rounded-md  w-full flex items-center justify-center py-1 bg-secondary text-black shadow-xl "
+              className={`border rounded-md border-zinc-200 w-full flex items-center justify-center py-1 ${getButtonBgColor("home")}`}
               href={"/home"}
               onClick={() => {
-                setOpen(false);
+                handleClick("home");
               }}
             >
               {HOME}
             </Link>
             <Link
-              className="border rounded-md border-zinc-200 w-full flex items-center justify-center py-1 "
+              className={`border rounded-md border-zinc-200 w-full flex items-center justify-center py-1 ${getButtonBgColor("portfolio")} `}
               href={"/portfolio"}
               onClick={() => {
-                setOpen(false);
+                handleClick("portfolio");
               }}
             >
               {PORTFOLIO}
             </Link>
             <Link
-              className="border rounded-md border-zinc-200 w-full flex items-center justify-center py-1 "
+              className={`border rounded-md border-zinc-200 w-full flex items-center justify-center py-1  ${getButtonBgColor("about")}`}
               href={"/about"}
               onClick={() => {
-                setOpen(false);
+                handleClick("about");
               }}
             >
               {ABOUT_US}
             </Link>
             <Link
-              className="border rounded-md border-zinc-200 w-full flex items-center justify-center py-1 "
+              className={`border rounded-md border-zinc-200 w-full flex items-center justify-center py-1  ${getButtonBgColor("contact-us")}`}
               href={"/contact-us"}
               onClick={() => {
-                setOpen(false);
+                handleClick("conatct-us");
               }}
             >
               {CONTACT}
             </Link>
             <Link
-              className="border rounded-md border-zinc-200 w-full flex items-center justify-center py-1 "
+              className={`border rounded-md border-zinc-200 w-full flex items-center justify-center py-1  ${getButtonBgColor("privacy-policy")}`}
               href={"/privacy-policy"}
               onClick={() => {
-                setOpen(false);
+                handleClick("privacy-policy");
               }}
             >
               {PRIVACY_POLICY}
@@ -93,8 +118,7 @@ function MobileNavBar({ setOpen }: MobileNavBarInterface) {
             <li className="flex w-full justify-between gap-x-6 text-white">
               <a
                 onClick={() => {
-                  setOpen(false);
-                  openLinks("i");
+                  handleClick(false, "i");
                 }}
                 className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150"
               >
@@ -103,8 +127,7 @@ function MobileNavBar({ setOpen }: MobileNavBarInterface) {
 
               <a
                 onClick={() => {
-                  setOpen(false);
-                  openLinks("m");
+                  handleClick(false, "m");
                 }}
                 className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150"
               >
@@ -112,8 +135,7 @@ function MobileNavBar({ setOpen }: MobileNavBarInterface) {
               </a>
               <a
                 onClick={() => {
-                  setOpen(false);
-                  openLinks("f");
+                  handleClick(false, "f");
                 }}
                 className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150"
               >
@@ -121,8 +143,7 @@ function MobileNavBar({ setOpen }: MobileNavBarInterface) {
               </a>
               <a
                 onClick={() => {
-                  setOpen(false);
-                  openLinks("t");
+                  handleClick(false, "t");
                 }}
                 className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150"
               >

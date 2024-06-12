@@ -1,5 +1,4 @@
 "use client";
-import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import {
   ABOUT_US,
   BLOG,
@@ -10,17 +9,31 @@ import {
 } from "../utils/appConstants";
 import { Button } from "../../@/components/ui/button";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Hamburger from "hamburger-react";
 import MobileNavBar from "./MobileNavbar";
+import { useAppContext } from "../utils/AppContext";
 
 function NavBar() {
   const [open, setOpen] = useState(false);
+  const { visitedPages, dispatch, currentPage } = useAppContext();
+  function updateCurrentPage(page: string) {
+    dispatch({
+      type: "setCurrentPage",
+      payload: page,
+    });
+  }
+
   return (
     <>
       <div className=" flex h-fit  items-center bg-secondary  ">
         <div className=" w-full h-fit items-center justify-between flex pl-4 pr-5 py-2 lg:py-4">
-          <Link href={"/"}>
+          <Link
+            href={"/"}
+            onClick={() => {
+              updateCurrentPage("home");
+            }}
+          >
             <img
               src="logoMain.png"
               className=" w-[50vw] h-[6vh] lg:w-[20vw] lg:h-[9vh]"
@@ -33,17 +46,52 @@ function NavBar() {
 
         <div className=" hidden lg:block lg:pr-6">
           <li className="flex list-none items-center gap-x-10">
-            <Link href={"/portfolio"}>
-              <Button variant={"outline"}>{PORTFOLIO}</Button>
+            <Link
+              href={"/portfolio"}
+              onClick={() => {
+                updateCurrentPage("portfolio");
+              }}
+            >
+              <Button
+                variant={currentPage !== "portfolio" ? "outline" : "default"}
+              >
+                {PORTFOLIO}
+              </Button>
             </Link>
-            <Link href={"/about"}>
-              <Button variant={"outline"}>{ABOUT_US}</Button>
+            <Link
+              href={"/about"}
+              onClick={() => {
+                updateCurrentPage("about");
+              }}
+            >
+              <Button variant={currentPage !== "about" ? "outline" : "default"}>
+                {ABOUT_US}
+              </Button>
             </Link>
-            <Link href={"/contact-us"}>
-              <Button variant={"outline"}>{CONTACT}</Button>
+            <Link
+              href={"/contact-us"}
+              onClick={() => {
+                updateCurrentPage("contact-us");
+              }}
+            >
+              <Button
+                variant={currentPage !== "contact-us" ? "outline" : "default"}
+              >
+                {CONTACT}
+              </Button>
             </Link>
-            <Link href={"/home"}>
-              <Button className="hidden lg:block">{HOME}</Button>
+            <Link
+              href={"/home"}
+              onClick={() => {
+                updateCurrentPage("home");
+              }}
+            >
+              <Button
+                className="hidden lg:block"
+                variant={currentPage !== "home" ? "outline" : "default"}
+              >
+                {HOME}
+              </Button>
             </Link>
           </li>
         </div>
