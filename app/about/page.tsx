@@ -33,7 +33,7 @@ import {
   import OurServicesCard from "../ui/OurServiceCard";
   import OurMakings from "../ui/OurMaking";
   import ClientTestimonials from "../ui/Testimonials";
-  import BottomNav from "../ui/BottomNav";
+  import Contact from "../ui/Contact";
   import Footer from "../ui/Footer";
   import NavBar from "../ui/NavBar";
   import WhatsappChat from "../ui/WhatsappChat";
@@ -168,7 +168,7 @@ import { useAppContext } from "../utils/AppContext";
               </div>
             </div>
             <div className="-mt-6">
-              <BottomNav />
+              <Contact />
             </div>
             <div>
               <Footer />

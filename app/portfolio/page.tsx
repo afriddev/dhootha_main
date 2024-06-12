@@ -14,7 +14,7 @@ import {
 } from "../utils/appConstants";
 
 import OurMakings from "../ui/OurMaking";
-import BottomNav from "../ui/BottomNav";
+import Contact from "../ui/Contact";
 import Footer from "../ui/Footer";
 import NavBar from "../ui/NavBar";
 import WhatsappChat from "../ui/WhatsappChat";
@@ -91,7 +91,7 @@ function Portfolio() {
             </div>
           </div>
           <div className="mt-6">
-            <BottomNav />
+            <Contact />
           </div>
           <div>
             <Footer />

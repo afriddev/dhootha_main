@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from "react";
-import BottomNav from "../ui/BottomNav";
+import Contact from "../ui/Contact";
 import Footer from "../ui/Footer";
 import NavBar from "../ui/NavBar";
 import WhatsappChat from "../ui/WhatsappChat";
@@ -29,7 +29,7 @@ function ContactUs() {
         <NavBar />
         <div className="flex flex-col gap-y-6 pt-4 font-semibold">
           <div className="-mt-6">
-            <BottomNav />
+            <Contact />
           </div>
           <div>
             <Footer />

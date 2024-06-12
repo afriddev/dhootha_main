@@ -17,12 +17,12 @@ import {
   SUMBIT,
 } from "../utils/appConstants";
 import AppFormInput from "./AppFormInput";
-function BottomNav() {
+function Contact() {
   const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
 
   function notify(vals: any) {
-    console.log(vals);
+    // console.log(vals);
   }
   return (
     <div className="flex flex-col gap-y-6 bg-background lg:flex-row lg:bg-primary lg:p-10 lg:justify-center lg:items-center">
@@ -88,4 +88,4 @@ function BottomNav() {
     </div>
   );
 }
-export default BottomNav;
+export default Contact;
