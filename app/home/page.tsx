@@ -67,7 +67,7 @@ function HomeMain() {
               />
             </div>
 
-            <div className="flex flex-col lg:max-w-[40vw]">
+            <div className="flex flex-col lg:max-w-[40vw] h-full justify-center">
               <div className="flex flex-col gap-y-4 px-4">
                 <h1 className="text-balance font-mono text-2xl">
                   {HOME_MAIN_LABEL}
@@ -83,7 +83,7 @@ function HomeMain() {
               </div>
               <Link
                 href={"/contact-us"}
-                className="mx-4 mt-4 flex h-fit cursor-pointer items-center gap-x-6 rounded-xl border-2 bg-secondary px-5 py-4 text-secondary-foreground hover:scale-105"
+                className="mx-4 mt-14 flex h-fit cursor-pointer items-center gap-x-6 rounded-xl border-2 bg-secondary px-5 py-4 text-secondary-foreground hover:scale-105"
               >
                 <FaWhatsapp className="h-10 w-10 " />
                 <p className="text-pretty">{HAVE_A_CHAT}</p>
