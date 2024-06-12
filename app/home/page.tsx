@@ -1,68 +1,73 @@
-"use client"
+"use client";
+import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa6";
+import Contact from "../ui/Contact";
+import Footer from "../ui/Footer";
+import NavBar from "../ui/NavBar";
+import OurMakings from "../ui/OurMaking";
+import OurServicesCard from "../ui/OurServiceCard";
+import ClientTestimonials from "../ui/Testimonials";
+import WhatsappChat from "../ui/WhatsappChat";
 import {
-  HOME_MAIN_CONTENT_END,
-  HOME_MAIN_CONTENT_START,
-  HOME_MAIN_LABEL,
-  HOME_MAIN_CONTENT1_BOLD,
-  HOME_MAIN_CONTENT_2,
-  HAVE_A_CHAT,
-  END_TO_END_VIEO_PRODUCTION,
-  OUR_SERICES,
-  OUR_SERVICES_DESC,
+  AD1,
+  AD1_DESC,
+  AD2,
+  AD2_DESC,
+  AD3,
+  AD3_DESC,
+  AD_FILMS,
+  CORPORATE_FILES,
   CORPORATE_VIDEO_PRODUCTION,
-  CORPORATE_VIDEO_PRODUCTION_DESC,
   CORPORATE_VIDEO_PRODUCTION1,
   CORPORATE_VIDEO_PRODUCTION1_DESC,
   CORPORATE_VIDEO_PRODUCTION2,
   CORPORATE_VIDEO_PRODUCTION2_DESC,
-  WHY_US,
-  YEARS_OF_EXPERIENCE,
-  YEARS_OF_EXPERIENCE_DESC,
+  CORPORATE_VIDEO_PRODUCTION_DESC,
+  END_TO_END_VIEO_PRODUCTION,
   HAPPY_CLIENT,
   HAPPY_CLIENT_DESC,
+  HAVE_A_CHAT,
+  HOME_MAIN_CONTENT1_BOLD,
+  HOME_MAIN_CONTENT_2,
+  HOME_MAIN_CONTENT_END,
+  HOME_MAIN_CONTENT_START,
+  HOME_MAIN_LABEL,
   NO_OF_VIEWS,
   NO_OF_VIEWS_DSC,
   OUR_PORTFOLIO,
   OUR_PORTFOLIO_DESC,
-  AD1,
-  AD1_DESC,
-  CORPORATE_FILES,
-  AD_FILMS,
-  AD2,
-  AD2_DESC,
-  PRODUCT_PHOTOS_AND_VIDEOS,
-  AD3,
-  AD3_DESC,
+  OUR_SERICES,
+  OUR_SERVICES_DESC,
   OUR_TESTIMONIALS,
   OUR_TESTIMONIALS_DESC,
+  PRODUCT_PHOTOS_AND_VIDEOS,
+  WHY_US,
+  YEARS_OF_EXPERIENCE,
+  YEARS_OF_EXPERIENCE_DESC,
 } from "../utils/appConstants";
-import { FaWhatsapp } from "react-icons/fa6";
-import CarouselView from "../ui/CarouselView";
-import { homeMainCarouselViewData } from "../data/homePageData";
-import OurServicesCard from "../ui/OurServiceCard";
-import OurMakings from "../ui/OurMaking";
-import ClientTestimonials from "../ui/Testimonials";
-import Contact from "../ui/Contact";
-import Footer from "../ui/Footer";
-import NavBar from "../ui/NavBar";
-import WhatsappChat from "../ui/WhatsappChat";
-import Link from "next/link";
 
 function HomeMain() {
-  
   return (
     <main className="w-scrren  relative h-screen overflow-x-hidden">
       <div className=" flex flex-col ">
         <NavBar />
         <div className="flex flex-col gap-y-6 pt-4 font-semibold">
-          <div className="flex flex-col items-center justify-center gap-y-6 pt-4 lg:h-[83vh] lg:flex-row">
-            <div className=" px-4">
+          <div className="flex flex-col items-center justify-center gap-y-6 lg:pt-4 lg:h-[83vh] lg:flex-row">
+            {/* <div className=" px-4">
               <CarouselView
                 dataArray={homeMainCarouselViewData}
                 autoPlay={true}
               />
+            </div> */}
+
+            <div className="w-full h-[27vh] lg:px-4 lg:h-[70vh]   ">
+              <img
+                src="ourservices/2.jpg"
+                className=" w-full h-full object-fill lg:rounded-lg"
+              />
             </div>
-            <div className="flex flex-col">
+
+            <div className="flex flex-col lg:max-w-[40vw]">
               <div className="flex flex-col gap-y-4 px-4">
                 <h1 className="text-balance font-mono text-2xl">
                   {HOME_MAIN_LABEL}
@@ -76,7 +81,8 @@ function HomeMain() {
                 </p>
                 <p className="font-normal">{HOME_MAIN_CONTENT_2}</p>
               </div>
-              <Link href={"/contact-us"}
+              <Link
+                href={"/contact-us"}
                 className="mx-4 mt-4 flex h-fit cursor-pointer items-center gap-x-6 rounded-xl border-2 bg-secondary px-5 py-4 text-secondary-foreground hover:scale-105"
               >
                 <FaWhatsapp className="h-10 w-10 " />
@@ -183,8 +189,8 @@ function HomeMain() {
                         height="315"
                         src="https://www.youtube.com/embed/ngs15DNXhAA?si=k2ezwHay52j6fvXf"
                         title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className=" items-stretch rounded-md object-fill hover:scale-105 lg:h-[40vh] lg:w-[40vw] "
-              
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        className=" items-stretch rounded-md object-fill hover:scale-105 lg:h-[40vh] lg:w-[40vw] "
                       ></iframe>
                     ),
                   },
@@ -197,8 +203,17 @@ function HomeMain() {
                   {
                     heading: AD3,
                     headingDesc: AD3_DESC,
-                    hasVideo:true,
-                    videos:<iframe width="560" height="315" src="https://www.youtube.com/embed/KbZILxtPiI4?si=ESAmh77RHfXjGH1a" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className=" items-stretch rounded-md object-fill hover:scale-105 lg:h-[40vh] lg:w-[40vw] "></iframe>
+                    hasVideo: true,
+                    videos: (
+                      <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/KbZILxtPiI4?si=ESAmh77RHfXjGH1a"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        className=" items-stretch rounded-md object-fill hover:scale-105 lg:h-[40vh] lg:w-[40vw] "
+                      ></iframe>
+                    ),
                   },
                 ]}
               />
