@@ -21,11 +21,14 @@ function NavBar() {
       <div className=" flex h-fit  items-center bg-secondary  ">
         <div className=" w-full h-fit items-center justify-between flex pl-4 pr-5 py-2 lg:py-4">
           <Link href={"/"}>
-            <label className="w-1/3 lg:w-full flex items-center gap-x-1 text-2xl font-medium lg:cursor-pointer lg:text-3xl lg:hover:scale-105">
-              {DOOTHA_PROMOTIONS}
-            </label>
+            <img
+              src="logoMain.png"
+              className=" w-[50vw] h-[6vh] lg:w-[20vw] lg:h-[9vh]"
+            />
           </Link>
-          <a className="block lg:hidden"><Hamburger toggled={open} size={30} toggle={setOpen} /></a>
+          <a className="block lg:hidden">
+            <Hamburger toggled={open} size={30} toggle={setOpen} />
+          </a>
         </div>
 
         <div className=" hidden lg:block lg:pr-6">
