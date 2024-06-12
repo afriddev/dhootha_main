@@ -1,41 +1,44 @@
 "use client";
 import Link from "next/link";
+import { BiLogoGmail } from "react-icons/bi";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import {
   ABOUT_US,
-  BLOG,
   CONTACT,
   COPYRIGHT_SYMBOL,
   DOOTHA_PROMOTIONS,
   HOME,
   PORTFOLIO,
   PRIVACY_POLICY,
-  SEND_MESSAGE,
 } from "../utils/appConstants";
-import { FaInstagram } from "react-icons/fa";
-import { BiLogoGmail } from "react-icons/bi";
-import { FaFacebook } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
 
 interface MobileNavBarInterface {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 function MobileNavBar({ setOpen }: MobileNavBarInterface) {
+  function openLinks(v: string) {
+    const link =
+      v === "w"
+        ? "//api.whatsapp.com/send?phone=919553360657&text=Hello👋"
+        : v === "i"
+          ? "https://www.instagram.com/dootha_promotions"
+          : v === "m"
+            ? "mailto:doothapromotions@gmail.com"
+            : v == "f"
+              ? ""
+              : "";
 
-
-  function openLinks(v:string){
-
-    const link = v === "w"?'//api.whatsapp.com/send?phone=919553360657&text=Hello👋':v === "i"?"https://www.instagram.com/dootha_promotions":v === "m"?"mailto:doothapromotions@gmail.com":v=="f"?"":""
-
-    window.open(link)
+    window.open(link);
   }
   return (
     <div className="flex fixed  w-screen h-[100vh] z-[999]">
-      <div className="fixed flex flex-col w-[70vw] h-[100vh] left-0 bg-slate-900 z-[999] items-center text-primary-foreground shadow-2xl drop-shadow-2xl py-8 px-8 justify-between">
+      <div className="fixed flex flex-col w-[70vw] h-[100vh] left-0 bg-slate-900 z-[999] items-center text-primary-foreground shadow-2xl drop-shadow-2xl  justify-between">
         <div className="flex flex-col h-[80vh] items-center w-full  justify-between">
-          <div>
-            <label className="flex text-center text-[5vh] px-3">
-              {DOOTHA_PROMOTIONS}
-            </label>
+          <div className="bg-secondary w-full h-fit items-center flex justify-center">
+            <img
+              src="logoMain.png"
+              className=" w-[60vw] h-[6vh] lg:w-[20vw] lg:h-[9vh] my-3 items-center flex justify-center"
+            />
           </div>
           <li className="flex flex-col w-full py-8 gap-10 items-center h-fit justify-between px-6">
             <Link
@@ -74,15 +77,6 @@ function MobileNavBar({ setOpen }: MobileNavBarInterface) {
             >
               {CONTACT}
             </Link>
-            <a
-              className="border rounded-md bg-primary w-full flex items-center justify-center py-1 drop-shadow-2xl shadow-2xl"
-              onClick={() => {
-                setOpen(false);
-                openLinks("w")
-              }}
-            >
-              {SEND_MESSAGE}
-            </a>
             <Link
               className="border rounded-md border-zinc-200 w-full flex items-center justify-center py-1 "
               href={"/privacy-policy"}
@@ -100,7 +94,7 @@ function MobileNavBar({ setOpen }: MobileNavBarInterface) {
               <a
                 onClick={() => {
                   setOpen(false);
-                  openLinks("i")
+                  openLinks("i");
                 }}
                 className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150"
               >
@@ -110,7 +104,7 @@ function MobileNavBar({ setOpen }: MobileNavBarInterface) {
               <a
                 onClick={() => {
                   setOpen(false);
-                  openLinks("m")
+                  openLinks("m");
                 }}
                 className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150"
               >
@@ -119,7 +113,7 @@ function MobileNavBar({ setOpen }: MobileNavBarInterface) {
               <a
                 onClick={() => {
                   setOpen(false);
-                  openLinks("f")
+                  openLinks("f");
                 }}
                 className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150"
               >
@@ -128,7 +122,7 @@ function MobileNavBar({ setOpen }: MobileNavBarInterface) {
               <a
                 onClick={() => {
                   setOpen(false);
-                  openLinks("t")
+                  openLinks("t");
                 }}
                 className=" flex h-8 w-8 items-center justify-center rounded-md bg-white/10 p-2 hover:scale-125 lg:hover:scale-150"
               >
